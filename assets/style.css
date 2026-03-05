@@ -363,9 +363,8 @@ a:hover { text-decoration: underline; }
 
 .event-list {}
 .event-list-item {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
@@ -375,9 +374,9 @@ a:hover { text-decoration: underline; }
 .event-list-item:hover { background: rgba(233,69,96,0.05); }
 .event-year-col {
   color: var(--accent);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
-  white-space: nowrap;
+  margin-bottom: 4px;
 }
 .event-title-col {
   color: #fff;
@@ -425,7 +424,6 @@ a:hover { text-decoration: underline; }
   .hero h1 { font-size: 1.8rem; }
   .article-title { font-size: 1.5rem; }
   .nav-links { display: none; }
-  .event-list-item { grid-template-columns: 90px 1fr; }
 }
 
 @media (max-width: 480px) {
