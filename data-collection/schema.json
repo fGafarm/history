@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "世界史マップ イベントデータスキーマ",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lat", "lng", "title", "year", "yearDisplay", "category", "region", "terrain", "description", "significance", "background"],
+        "properties": {
+          "lat": { "type": "number", "description": "緯度 (-90 to 90)" },
+          "lng": { "type": "number", "description": "経度 (-180 to 180)" },
+          "title": { "type": "string", "description": "イベント名（日本語、簡潔に）" },
+          "year": { "type": "integer", "description": "年（紀元前はマイナス。例: -221 = 紀元前221年）" },
+          "yearEnd": { "type": "integer", "description": "終了年（期間がある場合のみ）" },
+          "yearDisplay": { "type": "string", "description": "表示用年代テキスト（例: '紀元前221年', '1467年〜1477年'）" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "戦争・紛争", "国家・政治", "革命・反乱", "技術・科学",
+              "文化・芸術", "宗教・思想", "探検・発見", "疫病・災害",
+              "社会・経済", "文明・建築", "外交・条約", "人物"
+            ]
+          },
+          "subcategory": { "type": "string", "description": "詳細カテゴリ（例: '海戦', '条約', '発明', '建築'）" },
+          "region": { "type": "string", "description": "地域名（国・都市レベル）" },
+          "terrain": { "type": "string", "description": "地形・地理的特徴の詳細説明（150-300字）。なぜその場所だったのか、地形が事件にどう影響したか。" },
+          "description": { "type": "string", "description": "事件の概要（200-400字）。何が起きたか、主要人物、経緯。" },
+          "background": { "type": "string", "description": "歴史的背景（200-400字）。なぜこの事件が起きたのか、前後の文脈、社会状況。" },
+          "significance": { "type": "string", "description": "歴史的重要性（150-300字）。世界史における意義、後世への影響。" },
+          "relatedEvents": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "関連イベントのtitle（同じデータセット内の他イベント）"
+          },
+          "sources": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "参考文献・出典（学術的に信頼できるもの）"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "検索用タグ（人物名、王朝名、条約名など）"
+          }
+        }
+      }
+    }
+  }
+}
