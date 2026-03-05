@@ -3,7 +3,7 @@
  */
 
 const SITE_NAME = '世界史マップ';
-const SITE_URL = 'https://history-map.example.com'; // デプロイ時に変更
+const SITE_URL = 'https://history-76e.pages.dev';
 
 function escapeHtml(str) {
   if (!str) return '';
