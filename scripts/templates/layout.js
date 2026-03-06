@@ -5,6 +5,11 @@
 const SITE_NAME = '世界史マップ';
 const SITE_URL = 'https://history-76e.pages.dev';
 
+// Google Search Console 検証タグ（取得したら貼り替える）
+const GOOGLE_VERIFICATION = '';
+// Cloudflare Web Analytics トークン（ダッシュボードから取得）
+const CF_ANALYTICS_TOKEN = '';
+
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -60,6 +65,7 @@ function layout({ title, description, canonical, breadcrumbs, body, structuredDa
   <meta name="twitter:title" content="${escapeHtml(title || SITE_NAME)}">
   <meta name="twitter:description" content="${desc}">
   <link rel="stylesheet" href="/assets/style.css">
+  ${GOOGLE_VERIFICATION ? `<meta name="google-site-verification" content="${GOOGLE_VERIFICATION}">` : ''}
   ${structuredData ? `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>` : ''}
   ${extraHead || ''}
 </head>
@@ -87,6 +93,7 @@ function layout({ title, description, canonical, breadcrumbs, body, structuredDa
     </ul>
     <p>&copy; 2026 ${SITE_NAME}. All rights reserved.</p>
   </footer>
+  ${CF_ANALYTICS_TOKEN ? `<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "${CF_ANALYTICS_TOKEN}"}'></script>` : ''}
 </body>
 </html>`;
 }
