@@ -6,7 +6,7 @@ const SITE_NAME = '世界史マップ';
 const SITE_URL = 'https://history-76e.pages.dev';
 
 // Google Search Console 検証タグ（取得したら貼り替える）
-const GOOGLE_VERIFICATION = '';
+const GOOGLE_VERIFICATION = '47Z4w084PAxcc6AIvho0q_AAJ2AynV4coHCqbmQKtTA';
 // Cloudflare Web Analytics トークン（ダッシュボードから取得）
 const CF_ANALYTICS_TOKEN = '';
 
