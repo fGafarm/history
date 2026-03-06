@@ -416,6 +416,74 @@ a:hover { text-decoration: underline; }
 }
 .footer-links a { color: var(--text-secondary); }
 
+/* === 記事強化スタイル === */
+.lead-text {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 2;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-box {
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.faq-section { margin-top: 8px; }
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.faq-question {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.faq-question::before {
+  content: "Q. ";
+  color: var(--accent);
+  font-weight: bold;
+}
+.faq-answer {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding-left: 24px;
+}
+.faq-answer::before {
+  content: "A. ";
+  color: var(--link);
+  font-weight: bold;
+  margin-left: -24px;
+}
+
+.info-table {
+  width: 100%;
+  font-size: 0.85rem;
+}
+.info-table th {
+  text-align: left;
+  color: var(--text-muted);
+  padding: 6px 8px 6px 0;
+  width: 70px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.info-table td {
+  color: var(--text-primary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.info-table a { color: var(--link); }
+
 /* === レスポンシブ === */
 @media (max-width: 768px) {
   .article-body { grid-template-columns: 1fr; }

@@ -66,7 +66,7 @@ function layout({ title, description, canonical, breadcrumbs, body, structuredDa
   <meta name="twitter:description" content="${desc}">
   <link rel="stylesheet" href="/assets/style.css">
   ${GOOGLE_VERIFICATION ? `<meta name="google-site-verification" content="${GOOGLE_VERIFICATION}">` : ''}
-  ${structuredData ? `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>` : ''}
+  ${structuredData ? (Array.isArray(structuredData) ? structuredData.map(sd => `<script type="application/ld+json">${JSON.stringify(sd)}</script>`).join('\n  ') : `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`) : ''}
   ${extraHead || ''}
 </head>
 <body>
